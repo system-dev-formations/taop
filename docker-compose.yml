@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  db:
+    build: .
+    container_name: artofpostgres
+    environment:
+      HOST_IP: host.docker.internal
+    ports:
+      - 5440:5432
+    restart: always
+    volumes:
+      - .:/var/lib/postgresql
